@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "powermode.combo.location": "off",
+    "powermode.shake.enabled": false,
+    "powermode.presets": "flames",
+    "files.autoSave": "afterDelay",
+    "code-runner.defaultLanguage": "python",
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.ignoreSelection": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "python": "clear ; .\\venv\\Scripts\\python.exe"
+    }
+}
