@@ -1,0 +1,107 @@
+import random
+
+def convert_hora(hora: int):
+	if hora > 12 and hora != 24:
+		contador = 0
+		for x in range(hora):
+			if x >= 12:
+				contador+=1
+		return contador
+	elif hora == 24:
+		return 0
+	else:
+		return hora
+controle = 1
+while controle != 0:
+	hora = input("Digite a hora a ser convertida: ")
+	minuto = input("Digite o minuto: ")
+	print ("Convertido: %i:%i"%(convert_hora(hora),minuto))
+	controle = input("Continuar? 1(sim)/0(nao): ")
+
+
+def valorPagamento(valor, dias):
+    juros = 0
+    if dias == 0:
+        return valor
+    else:
+        juros = 0.1 * dias
+        
+        return valor + ((3 * valor)/100) + juros
+
+total = 0
+cont = 0
+while True:
+    valor = float(input('Digite o valor da prestação: '))
+    if valor == 0:
+        break
+    dias = int(input('Digite o número de dias em atraso: '))
+    total += valorPagamento(valor, dias)
+    cont += 1
+
+print('Quantidade total: %d' % cont)
+print('Valor total das prestações: %.2f' % total)
+
+
+def lancar_dados():
+    return random.randint(2, 12)
+
+entrada = ""
+jogada = 0
+ponto = 0
+print ("Digite  \"sair\" para sair (sem aspas)\n aperte <enter> para rolar os dados: ")
+
+while (entrada!="sair"):
+    jogada += 1
+    print ("Jogada {}".format(jogada))
+    entrada = input("Esperando ação: ")
+
+    if entrada == "sair":
+        print ("Saindo do jogo...")
+    else:
+        if jogada>1:
+            print ("Seu ponto é {}".format(ponto))
+        valor = lancar_dados()
+        print ("O valor do dado é {}\n\n".format(valor))
+        if jogada == 1:
+            if valor == 7 or valor == 11:
+                print ("Você tirou um natural e ganhou, PARABENS!!!!!!")
+                exit()
+            elif valor == 2 or valor == 3 or valor == 12:
+                print ("Você tirou um craps e perdeu, boa sorte da proxima")
+                exit()
+            else:
+                ponto = valor
+        else:
+            if valor == 7:
+                print ("Você tirou um 7 antes de repetir seu ponto, você perdeu")
+                exit()
+            elif ponto == valor:
+                print ("Você conseguiu repetir seu ponto e ganhou, Parabens!!!!")
+                exit()
+
+
+def extenso_mes(mes):
+	lista_de_mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+	mes_ex = lista_de_mes[mes-1]
+	return mes_ex
+
+def extenso_dia(dia):
+
+	lista_de_dia = ["Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Onze", "Doze", "Treze", "Catorzer", "Quinze", "Dezesseis", "Dezessete", "Dezoito", "Dezenove", "Vinte", "Vinte e Um", "Vinte e Dois", "Vinte e Três", "Vinte e Quatro", "Vinte e Cinco", "Vinte e Seis", "Vinte e Sete", "Vinte e Oito", "Vinte e Nove", "Trinta", "Trinta e Um"]
+	dia_ex = lista_de_dia[dia-1]
+	return dia_ex
+
+
+print("O valor por extenso é " + extenso_dia('dia') + " de " + extenso_mes('mes') + " de %i "%('ano'))
+
+
+from random import shuffle
+def embaralha(nome):
+    a = list(nome)
+    shuffle(a)
+    a = ''.join(a)
+    print(a.lower())
+
+
+nome = input('Digite algo: ')
+embaralha(nome)
