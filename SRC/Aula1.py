@@ -30,5 +30,3 @@ print(c.lower()) # deixa tudo minusculo
 print(c.capitalize()) # deixa só a primeira letra do texto maiuscula
 print(c.title()) # deixa toda inicial maiuscula
 print(c.strip()) # retira os espaços antes e depois da palavra, mas n entre ela
-
-print('Teste!!!!!!!')
