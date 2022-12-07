@@ -9,3 +9,4 @@ def pegar_cotacoes(codigo_moeda):
     except:
         print("Código de Moeda Inválido")
         return None
+        
